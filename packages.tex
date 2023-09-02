@@ -1,0 +1,34 @@
+
+% !TeX root = ./main.tex
+
+%###################################################################################################
+%#                                         DOCUMENT CLASS                                          #
+%###################################################################################################
+
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[11pt, a4paper, twoside, german, final, openany]{memoir}
+
+
+%###################################################################################################
+%#                                            PACKAGES                                             #
+%###################################################################################################
+\usepackage[utf8]{inputenc}                     % Required for inputting international characters
+\usepackage[T1]{fontenc}                        % Output font encoding for international characters
+\usepackage{xcolor}                             % for named colors
+\usepackage{eso-pic}                            % required to place huge uni logo at the back - on title page
+\usepackage{graphicx}                           % for pictures
+\usepackage[hidelinks]{hyperref}                % for hyperlinks 
+\usepackage[english, ngerman]{babel}            % english and german spelling correction
+\usepackage[babel, german=quotes]{csquotes}     % german quotation
+\usepackage{geometry}                           % allows to change the layout of a page in a very simple way
+\usepackage[most]{tcolorbox}                    % provides an environment for coloured and framed text boxes
+\usepackage{titletoc}                           % alternative headings for toc/lof/lot
+\usepackage{tikz}                               % allows the creation of graphics
+\usepackage{acronym}                            % provides logic to implement a list of acronyms
+\usepackage{enumitem}                           % allows listing
+\usepackage[style=alphabetic,
+    backend=bibtex]{biblatex}                   % backend logic
+\usepackage{float}                              % improves the interface for defining floating objects such as figures and tables.
+\usepackage{subfig}                             % allows to more figures to be grouped
+
+
