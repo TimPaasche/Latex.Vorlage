@@ -100,7 +100,7 @@
 %#                                          CHAPTER STYLE                                          #
 %###################################################################################################
 \makechapterstyle{defaultChapterStyle}{%
-    %\chapterstyle{default}
+    \chapterstyle{default}
     \setlength\beforechapskip{-15mm}
     \setlength\afterchapskip{5mm}
     \renewcommand*{\chapnumfont}{\sffamily\HUGE\bfseries\color{HS_green}}
@@ -120,7 +120,7 @@
 %###################################################################################################
 %#                                         HEADLINE STYLE                                          #
 %###################################################################################################
-\chapterstyle{defaultChapterStyle}                                          % chapter headlines
+\chapterstyle{defaultChapterStyle}                              % chapter headlines
 \setsecheadstyle{\sffamily\LARGE\bfseries\color{HS_green}}      % style of \section
 \setsubsecheadstyle{\sffamily\Large\bfseries\color{HS_green}}   % style of \subsection
 \setsecnumdepth{subsection}                                     % numbers of the subsection
@@ -152,7 +152,7 @@
 \titlecontents{section}[1.8em]{\smallskip\sffamily\bfseries\normalsize}
 {\thecontentslabel.\enspace}{}{\hfill\contentspage}
 
-%style of subsection titles:
+% style of subsection titles:
 \titlecontents{subsection}[4.1em]{\smallskip\sffamily\normalsize}
 {\thecontentslabel\enspace}{}{\hfill\contentspage}
 
@@ -201,21 +201,21 @@
     % Logo of HKA and enterprise
     \begin{figure}
         \centering
-        \subfloat{{\includegraphics[height=2cm]{images/Logos/HKA_EIT_Logo.jpg} }}
-        \hspace{2cm}
-        \subfloat{{\includegraphics[height=2cm]{images/Logos/HKA_EIT_Logo.jpg} }}
+        \subfloat{\includegraphics[height=1.7cm]{images/Logos/HKA_EIT_Logo.jpg} }
+        \hspace{0.4cm}
+        \subfloat{\includegraphics[height=1.7cm]{images/Logos/HKA_EIT_Logo.jpg} }
     \end{figure}
 
     % Titelbox
-    \vspace{2cm}
+    \vspace*{2cm}
     \centering
     \begin{tcolorbox}[colback=white,
             breakable, enhanced,colframe=HS_green]
         \centering
         \vspace*{1cm}
         {\HUGE\bfseries{\begin{Spacing}{1.5}\textcolor{HS_green}{\@title}\end{Spacing}}}
-        \@ifundefined{@subtitle}{}{\vspace{3ex}\large\textcolor{HS_green}{\@subtitle}}
-        \vspace{1cm}
+        \@ifundefined{@subtitle}{}{\vspace*{3ex}\large\textcolor{HS_green}{\@subtitle}}
+        \vspace*{1cm}
     \end{tcolorbox}
     \vfill
 
@@ -238,61 +238,67 @@
 
     \thispagestyle{empty}   % no header and footer
     \endgroup
-}
+    \clearpage
 
-% new layout which comes after the titlepage
-\newgeometry{
-    left=2.5cm,
-    right=2.5cm,
-    top=3cm,
-    bottom=2cm,
-    head=40pt
+    % new layout which comes after the titlepage
+    \newgeometry{
+        left=2.5cm,
+        right=2.5cm,
+        top=3cm,
+        bottom=2cm,
+        head=40pt
+    }
+    \sffamily
+
+    \pagestyle{defaultPageStyle}
 }
-\sffamily
-\pagestyle{defaultPageStyle}
 
 
 %###################################################################################################
 %#                                          ABSTRACT PAGE                                          #
 %###################################################################################################
 \newcommand{\makeabstractpageGER}{
-    %\newpage
-    \centering
-    \vspace*{5ex}
+    \begin{center}
+        \vspace*{5ex}
 
-    % abstract in german
-    \begin{tcolorbox}[colback=white,
-            breakable, enhanced,
-            colframe = HS_green!100!white,
-            title = Zusammenfassung]
-        \vspace{1ex}
-        \large
-        \@abstractDE\\
-        \vfill
-        \textbf{Schlüsselwörter:} \newline
-        \@schluesselwoerter
-        \vspace{2mm}
-    \end{tcolorbox}
+        % abstract in german
+        \begin{tcolorbox}[colback=white,
+                breakable, enhanced,
+                colframe = HS_green!100!white,
+                title = Zusammenfassung]
+            \vspace{1ex}
+            \large
+            \@abstractDE
+            \newline
+            \vfill
+            \textbf{Schlüsselwörter:}
+            \newline
+            \@schluesselwoerter
+            \vspace{2mm}
+        \end{tcolorbox}
+    \end{center}
     \clearpage
 }
 
 \newcommand{\makeabstractpageENG}{
-    %\newpage
-    \centering
-    \vspace*{5ex}
+    \begin{center}
+        \vspace*{5ex}
 
-    % abstract in english
-    \begin{tcolorbox}[colback=white,
-            breakable, enhanced,
-            colframe = HS_green!100!white,
-            title = Abstract]
-        \vspace{1ex}
-        \large
-        \@abstractEN\\
-        \vfill
-        \textbf{Keywords:} \newline
-        \@keywords
-        \vspace{2mm}
-    \end{tcolorbox}
+        % abstract in english
+        \begin{tcolorbox}[colback=white,
+                breakable, enhanced,
+                colframe = HS_green!100!white,
+                title = Abstract]
+            \vspace{1ex}
+            \large
+            \@abstractEN
+            \newline
+            \vfill
+            \textbf{Keywords:}
+            \newline
+            \@keywords
+            \vspace{2mm}
+        \end{tcolorbox}
+    \end{center}
     \clearpage
 }
