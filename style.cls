@@ -30,7 +30,6 @@
 \RequirePackage{subfig}                             % allows to more figures to be grouped
 \RequirePackage{type1cm}
 
-
 % for the use in this class
 \usepackage{subfig}
 \usepackage{graphicx}
@@ -41,6 +40,8 @@
 \usepackage{tabularx}
 \usepackage{subfig}
 \usepackage{type1cm}
+\usepackage[utf8]{inputenc}
+
 
 %###################################################################################################
 %#                                        COLOR DEFINITIONS                                        #
@@ -50,7 +51,7 @@
 
 
 %###################################################################################################
-%#                                      CONSTANTS DEFINITIONS                                      #
+%#                                      VARIABLES DEFINITIONS                                      #
 %###################################################################################################
 \def\title#1{\gdef\@title{#1}}                                          % title
 \def\subtitle#1{\gdef\@subtitle{#1}}                                    % subtitle
